@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+@import './vars.css'; 
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color:white;
+}
