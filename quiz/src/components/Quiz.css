@@ -1,0 +1,40 @@
+.container {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 29px;
+  }
+  .answer-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  button.correct {
+    background-color: green;
+  }
+  
+  button.incorrect {
+    background-color: red;
+  }
+  
+  .result-image {
+    width: 50px; /* Set the width */
+    height: 50px; /* Set the height */
+    display: block;
+    margin: 20px auto;
+    animation: slideIn 1s forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+ 
