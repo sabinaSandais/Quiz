@@ -1,0 +1,25 @@
+.answer-buttons {
+    display: flex;
+    flex-direction: row; /* Stack buttons vertically */
+    gap: 2 0px; /* Add space between buttons */
+  }
+  
+  .answer-buttons button {
+    width: 50%; /* Make buttons full width of container */
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .answer-buttons button.correct {
+    background-color: green;
+    color: white;
+  }
+  
+  .answer-buttons button.incorrect {
+    background-color: red;
+    color: white;
+  }
+  
+  
