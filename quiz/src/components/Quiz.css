@@ -1,29 +1,22 @@
-@import'../vars.css';
+@import "../vars.css";
 .container-quiz {
-   height: 100vh;
+  height: 100vh;
   display: flex;
-   flex-direction: row;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-   width: 100%;
- 
- 
+  width: 100%;
+
   text-align: center;
-  
-       
 }
-.one{
- 
+.one {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-   width: 80%;
- 
- 
-  text-align: center;
- 
+  width: 80%;
 
+  text-align: center;
 }
 
 h2 {
@@ -35,27 +28,15 @@ h2 {
   color: var(--container-border-color);
   text-align: center;
   margin-top: 100px;
-  
- 
-  
   width: 50%;
 }
 .error {
   font-size: 2rem;
   color: var(--container-border-color);
   margin-top: 100px;
-  
   text-align: center;
-
- 
   width: 50%;
 }
-
-/* .answer-container {
-  position: relative;
-  display: inline-block;
- 
-} */
 
 .result-image-container {
   width: 250px;
@@ -64,23 +45,19 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Ensure the container does not grow */
+  overflow: hidden;
 }
 
 .result-image {
   width: 100%;
   height: 100%;
- display: block;
-  /* margin: 20px auto; */
+  display: block;
   animation: slideIn 1s forwards ease-in-out;
-  
-
 }
 
 .result-image.correct,
 .result-image.incorrect {
   opacity: 1;
-  
 }
 
 @keyframes slideIn {
@@ -93,52 +70,3 @@ h2 {
     transform: translateX(0);
   }
 }
-
-
-/* .container-quiz {
- 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-    border: 1px solid white;
-  }
- h2{
-    font-size: 2rem;
-    color: var(--container-border-color);
-    margin-bottom: 4s0px;
-   
-  }
-  .answer-container {
-    position: relative;
-    display: inline-block;
-  }
-
-  
-
-  
-  .result-image {
-    width: 200px; 
-    height: 200px;
-    display: block;
-    margin: 20px auto;
-   
-    animation: slideIn 1s forwards ease-in-out;
-  }
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-   
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  
- 
-  } */
-  
- 

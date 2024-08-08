@@ -1,56 +1,58 @@
 @import "../vars.css";
-.result-page{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.result-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 70vh;
+  position: relative;
+  border-radius: 65px;
+  background-color: var(--background-color);
+}
+.result::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 70px;
+  background: linear-gradient(
+    to right,
+    darkgreen,
+    rgb(28, 151, 28),
+    lightgreen,
+    greenyellow,
+    yellow,
+    gold
+  );
+  opacity: 0.7;
+  z-index: -1;
+  margin: -20px;
+}
 
-    /* background-color: var(--background-color); */
-    
+h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
 }
-.result{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    width: 80%;
-    height: 70vh;
-    position: relative;
-    border-radius: 65px;
-    background-color: var(--background-color);
-   
-
+p {
+  font-size: 2rem;
 }
-.result::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 70px;
-    background: linear-gradient(to right,darkgreen, rgb(28, 151, 28), lightgreen, greenyellow,yellow,gold);
-    opacity: 0.7;
-    z-index: -1;
-    margin: -20px;
-
-}
-
-h1{
-    font-size: 3rem;
-    margin-bottom: 50px;
-}
-p{
-    font-size: 2rem;
-}
-.reset{
-    padding: 15px 25px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--button-hover-background);
-    color: black;
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-top: 50px;
+.reset {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-hover-background);
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 50px;
 }

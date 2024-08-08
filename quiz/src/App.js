@@ -1,12 +1,10 @@
-import {useContext} from 'react'
-import Welcome from './components/Welcome';
-import Quiz from './components/Quiz';
-import QuizProvider, { QuizContext } from './QuizContext';
-import ResultPage from './components/ResultPage';
+import { useContext } from "react";
+import Welcome from "./components/Welcome";
+import Quiz from "./components/Quiz";
+import QuizProvider, { QuizContext } from "./QuizContext";
+import ResultPage from "./components/ResultPage";
 
-
-import './App.css'
-
+import "./App.css";
 
 const AppContent = () => {
   const { difficulty, finalScore } = useContext(QuizContext);

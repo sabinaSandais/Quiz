@@ -1,18 +1,10 @@
 @import "../vars.css";
-/* .question-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-} */
-.question{
+
+.question {
   color: var(--text-color);
   font-size: var(--font-size-text);
   margin-bottom: 60px;
-  /* width: 80%; */
-  background: linear-gradient(to right,black,green);
+  background: linear-gradient(to right, black, green);
   text-align: center;
   padding: 20px;
   border-radius: 10px;
@@ -20,56 +12,38 @@
   font-size: 20px;
 }
 .answer-buttons {
-    display: flex;
-    /* flex-direction: column; Stack buttons vertically */
-   
-    /* align-items: center;  */
-    /* margin-bottom: 2rem; */
-    width: 100%;
-    
-    justify-content: center;
-    flex-wrap: wrap;/* Add space between buttons */
-  }
-  
-  .answer-buttons button {
-    width: 40%;
-    padding: 15px;
-    margin: 0 10px 20px 10px;
-    text-align: center;
-    /* background: linear-gradient(#0e0124, #22074d); */
-    border: 1px solid var(--container-border-color);
-    background-color: var(--background-color);
-    color: white;
-    border-radius: 15px;
-    font-weight: 300;
-    font-size: 20px;
-    cursor: pointer;
+  display: flex;
 
-    /* width: 50%; /* Make buttons full width of container */
-    /* padding: 15px;
-    border: 1px solid var(--container-border-color);
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: var(--font-size-text);
-    background-color: var(--background-color);
-    color: white;
-    font-family: var(--font-family);  */
-  
-  }
-  .answer-buttons button:hover {
-    cursor: pointer;
-    background-color: rgb(174, 244, 153);
-    color: black;
-  }
-  
-  .answer-buttons button.correct {
-    border: 1px solid green;
-    
-  }
-  
-  .answer-buttons button.incorrect {
-    border: 1px solid crimson;
-    
-  }
-  
-  
+  width: 100%;
+
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.answer-buttons button {
+  width: 40%;
+  padding: 15px;
+  margin: 0 10px 20px 10px;
+  text-align: center;
+
+  border: 1px solid var(--container-border-color);
+  background-color: var(--background-color);
+  color: white;
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 20px;
+  cursor: pointer;
+}
+.answer-buttons button:hover {
+  cursor: pointer;
+  background-color: rgb(174, 244, 153);
+  color: black;
+}
+
+.answer-buttons button.correct {
+  border: 1px solid green;
+}
+
+.answer-buttons button.incorrect {
+  border: 1px solid crimson;
+}
