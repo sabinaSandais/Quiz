@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { QuizContext } from "../QuizContext";
-import "./ResultPage.css";
+import "./Result.css";
 
 const ResultPage = () => {
   const { finalScore, resetQuiz } = useContext(QuizContext);
