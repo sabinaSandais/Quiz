@@ -1,0 +1,72 @@
+@import "../vars.css";
+.container-quiz {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  text-align: center;
+}
+.one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.loading {
+  font-size: 2rem;
+  color: var(--container-border-color);
+  text-align: center;
+  margin-top: 100px;
+  width: 50%;
+}
+.error {
+  font-size: 2rem;
+  color: var(--container-border-color);
+  margin-top: 100px;
+  text-align: center;
+  width: 50%;
+}
+
+.result-image-container {
+  width: 250px;
+  height: 150px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.result-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: slideIn 1s forwards ease-in-out;
+}
+
+.result-image.correct,
+.result-image.incorrect {
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
