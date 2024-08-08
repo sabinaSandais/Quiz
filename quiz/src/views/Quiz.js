@@ -1,13 +1,12 @@
 import React, {
-  useEffect,
   useState,
   useContext,
-  useRef,
   useCallback,
+  useEffect,
+  useRef,
 } from "react";
-
-import { fetchQuestions } from "../api";
 import { QuizContext } from "../QuizContext";
+import useFetchQuestions from "../hooks/useFetchQuestions";
 import Question from "../components/Question";
 import Score from "../components/Score";
 import Timer from "../components/Timer";
@@ -15,14 +14,13 @@ import "./Quiz.css";
 
 const Quiz = () => {
   const { difficulty, setFinalScore } = useContext(QuizContext);
-  const [questions, setQuestions] = useState([]);
+  const { questions, loading, error } = useFetchQuestions(difficulty);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [timeLeft, setTimeLeft] = useState(10);
   const timerRef = useRef(null);
+
   const handleAnswer = useCallback(
     (answer) => {
       if (selectedAnswer !== "") return;
@@ -46,29 +44,29 @@ const Quiz = () => {
               (answer === questions[currentQuestion].correct_answer ? 1 : 0)
           );
         }
-      }, 500);
+      }, 2000); // 2-second delay for visual feedback
     },
     [selectedAnswer, score, questions, currentQuestion, setFinalScore]
   );
 
-  useEffect(() => {
-    const loadQuestions = async () => {
-      try {
-        const fetchedQuestions = await fetchQuestions(difficulty);
-        setQuestions(fetchedQuestions);
-      } catch (error) {
-        setError("Failed to load questions. Please try again.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadQuestions();
-  }, [difficulty]);
+  const handleTimeOut = useCallback(() => {
+    clearInterval(timerRef.current); // Clear any ongoing timer
+    // Move to next question immediately if timeout occurs
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+      setSelectedAnswer("");
+      setTimeLeft(10);
+    } else {
+      setFinalScore(
+        score +
+          (selectedAnswer === questions[currentQuestion].correct_answer ? 1 : 0)
+      );
+    }
+  }, [currentQuestion, questions, score, selectedAnswer, setFinalScore]);
 
   useEffect(() => {
     if (timeLeft <= 0) {
-      handleAnswer("");
+      handleTimeOut();
       return;
     }
 
@@ -77,15 +75,10 @@ const Quiz = () => {
     }, 1000);
 
     return () => clearInterval(timerRef.current);
-  }, [timeLeft, handleAnswer]);
+  }, [timeLeft, handleTimeOut]);
 
-  if (loading) {
-    return <div className="loading">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="error">{error}</div>;
-  }
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">{error}</div>;
 
   const currentQ = questions[currentQuestion];
 
