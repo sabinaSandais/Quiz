@@ -1,0 +1,25 @@
+.timer {
+  width: 25%;
+  height: 100px;
+  border: 2px solid #ccc;
+  position: relative;
+  background-color: #f3f3f3;
+}
+
+.timer-fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #76c7c0; /* Active color */
+  transition: height 1s ease;
+}
+
+.timer-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color: #333;
+}
