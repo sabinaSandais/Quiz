@@ -1,7 +1,8 @@
 import React from 'react';
+import './Score.css';
 
 const Score = ({ score }) => {
-  return <p>Score: {score}</p>;
+  return <p className='score'>Score: {score}</p>;
 };
 
 export default Score;
