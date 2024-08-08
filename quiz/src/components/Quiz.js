@@ -49,38 +49,39 @@ const Quiz = () => {
   };
 
   if (loading) {
-    return <div className="container">Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   if (error) {
-    return <div className="container error">{error}</div>;
+    return <div className=" error">{error}</div>;
   }
 
   const currentQ = questions[currentQuestion];
 
   return (
-    <div className="container quiz">
-      <h2>Question {currentQuestion + 1}/{questions.length}</h2>
+    <div className="container-quiz">
+      <h2 className='total-question'>Question {currentQuestion + 1}/{questions.length}</h2>
       <Question
         question={currentQ}
         handleAnswer={handleAnswer}
         selectedAnswer={selectedAnswer}
       />
-      {selectedAnswer && (
-        <div className={`result-image ${selectedAnswer === currentQ.correct_answer ? 'correct' : 'incorrect'}`}>
+      <Score score={score} />
+      <div className="result-image-container">
+        {selectedAnswer && (
           <img 
             src={selectedAnswer === currentQ.correct_answer ? '/correct2.png' : '/wronganswer.png'} 
             alt={selectedAnswer === currentQ.correct_answer ? 'Correct' : 'Incorrect'} 
-            className="result-image"
+            className={`result-image ${selectedAnswer === currentQ.correct_answer ? 'correct' : 'incorrect'}`}
           />
-        </div>
-      )}
-      <Score score={score} />
+        )}
+      </div>
     </div>
   );
 };
 
 export default Quiz;
+
 // import React, { useEffect, useState, useContext } from 'react';
 // import { fetchQuestions } from '../api';
 // import { QuizContext } from '../QuizContext';
@@ -102,9 +103,9 @@ export default Quiz;
 //       try {
 //         const fetchedQuestions = await fetchQuestions(difficulty);
 //         setQuestions(fetchedQuestions);
-//         setLoading(false);
 //       } catch (error) {
 //         setError('Failed to load questions. Please try again.');
+//       } finally {
 //         setLoading(false);
 //       }
 //     };
@@ -113,7 +114,7 @@ export default Quiz;
 //   }, [difficulty]);
 
 //   const handleAnswer = (answer) => {
-//     if (selectedAnswer !== '') return; 
+//     if (selectedAnswer !== '') return;
 
 //     setSelectedAnswer(answer);
 
@@ -142,13 +143,16 @@ export default Quiz;
 //   const currentQ = questions[currentQuestion];
 
 //   return (
-//     <div className="container quiz">
-//       <h2>Question {currentQuestion + 1}/{questions.length}</h2>
+   
+//     <div className="container-quiz">
+//       <h2 className='total-question'>Question {currentQuestion + 1}/{questions.length}</h2>
 //       <Question
 //         question={currentQ}
 //         handleAnswer={handleAnswer}
 //         selectedAnswer={selectedAnswer}
 //       />
+     
+//       <Score score={score} />
 //       {selectedAnswer && (
 //         <div className={`result-image ${selectedAnswer === currentQ.correct_answer ? 'correct' : 'incorrect'}`}>
 //           <img 
@@ -158,9 +162,15 @@ export default Quiz;
 //           />
 //         </div>
 //       )}
-//       <Score score={score} />
+    
 //     </div>
+     
+   
 //   );
 // };
 
 // export default Quiz;
+// import React, { useEffect, useState, useContext } from 'react';
+// import { fetchQuestions } from '../api';
+// import { QuizContext } from '../QuizContext';
+// import Question from './Question';
