@@ -1,0 +1,13 @@
+:root {
+    --background-color: rgb(29, 26, 26);
+    --container-border-color: rgb(174, 244, 153);
+    /* --container-border-color-alt: rgb(158, 209, 237); */
+    --h1-color: white;
+    --text-color: white;
+    --button-font-color: white;
+    --button-background: linear-gradient(rgb(158, 209, 237));
+    --button-hover-background: rgb(174, 244, 153);
+    --font-family: 'Nova Square', cursive;
+    --font-size-text: 1.6rem;
+  }
+  
