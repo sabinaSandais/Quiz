@@ -1,25 +1,36 @@
-.timer {
-  width: 25%;
-  height: 100px;
-  border: 2px solid #ccc;
+.timer-circle {
   position: relative;
-  background-color: #f3f3f3;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+   
+  background: #037800;
+  overflow: hidden;
+  margin-bottom: 500px;
 }
 
-.timer-fill {
+.timer-mask {
   position: absolute;
-  bottom: 0;
   width: 100%;
-  background-color: #76c7c0; /* Active color */
-  transition: height 1s ease;
+  height: 100%;
+ background: linear-gradient(to bottom,yellowgreen,orange,red,crimson);
+  border-radius: 50%;
+  clip-path: circle(50%);
+  z-index: 1;
 }
 
 .timer-text {
   position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
+  font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+    z-index: 1;
 }
