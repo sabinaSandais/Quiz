@@ -7,11 +7,12 @@ const ResultPage = () => {
 
   return (
     <div className="result-page">
+      <div className="result" > 
     
-      <h1>Quiz Completed</h1>
-      <p>Your final score is {finalScore} out of 10</p>
-      <button className='reset' onClick={resetQuiz}>Try Again</button>
-    
+       <h1>Quiz Completed</h1>
+       <p>Your final score is {finalScore} out of 10</p>
+       <button className='reset' onClick={resetQuiz}>Try Again</button>
+     </div>
     </div>
   );
 };

@@ -59,7 +59,7 @@ const Quiz = () => {
 
     const timer = setInterval(() => {
       setTimeLeft(timeLeft => timeLeft - 1);
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(timer);
   }, [timeLeft, handleAnswer]);
@@ -76,8 +76,11 @@ const Quiz = () => {
 
   return (
     <div className="container-quiz">
+      <section className="one"> 
+      
+
       <h2 className='total-question'>Question {currentQuestion + 1}/{questions.length}</h2>
-      <Timer timeLeft={timeLeft} />  {/* Add the Timer component */}
+       {/* Add the Timer component */}
       <Question
         question={currentQ}
         handleAnswer={handleAnswer}
@@ -91,8 +94,11 @@ const Quiz = () => {
             alt={selectedAnswer === currentQ.correct_answer ? 'Correct' : 'Incorrect'} 
             className={`result-image ${selectedAnswer === currentQ.correct_answer ? 'correct' : 'incorrect'}`}
           />
-        )}
-      </div>
+          )}
+        
+        </div>
+        </section>
+        <section className="two"><Timer timeLeft={timeLeft} />  </section>
     </div>
   );
 };
