@@ -22,12 +22,10 @@ describe("Question Component", () => {
       />
     );
 
-    // Check if the question is rendered correctly
     expect(
       screen.getByText(/What is the capital of France\?/i)
     ).toBeInTheDocument();
 
-    // Check if all answers are rendered correctly
     sampleQuestion.incorrect_answers
       .concat(sampleQuestion.correct_answer)
       .forEach((answer) => {
@@ -44,13 +42,10 @@ describe("Question Component", () => {
       />
     );
 
-    // Select an answer
     fireEvent.click(screen.getByText("Paris"));
 
-    // Mock function should be called
     expect(mockHandleAnswer).toHaveBeenCalledWith("Paris");
 
-    // Rerender with the selected answer
     rerender(
       <Question
         question={sampleQuestion}
@@ -59,7 +54,6 @@ describe("Question Component", () => {
       />
     );
 
-    // Check if the selected answer is disabled
     expect(screen.getByText("Paris")).toBeDisabled();
   });
 });
