@@ -44,14 +44,13 @@ const Quiz = () => {
               (answer === questions[currentQuestion].correct_answer ? 1 : 0)
           );
         }
-      }, 2000); // 2-second delay for visual feedback
+      }, 2000);
     },
     [selectedAnswer, score, questions, currentQuestion, setFinalScore]
   );
 
   const handleTimeOut = useCallback(() => {
-    clearInterval(timerRef.current); // Clear any ongoing timer
-    // Move to next question immediately if timeout occurs
+    clearInterval(timerRef.current);
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer("");
