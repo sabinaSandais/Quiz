@@ -9,8 +9,8 @@ const Question = ({ question, handleAnswer, selectedAnswer }) => {
     : ['True', 'False'];
 
   return (
-    <div>
-      <p>{parse(question.question)}</p>
+    <div className='question-container'>
+      <p className='question'>{parse(question.question)}</p>
       <div className="answer-buttons">
         {answers.map((answer, index) => (
           <button
