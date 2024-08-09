@@ -62,16 +62,15 @@
 
 @keyframes slideInFadeOut {
   0% {
-    opacity: 0; /* Start fully transparent */
-    transform: translateX(-100px); /* Start 100 pixels to the left */
+    opacity: 0;
+    transform: translateX(-100px);
   }
   50% {
-    opacity: 1; /* Fully visible at the middle point */
-    transform: translateX(50%); /* Slide to the middle */
+    opacity: 1;
+    transform: translateX(50%);
   }
   100% {
-    opacity: 0; /* Fade out by the end */
-    transform: translateX(0); /* End at the original position */
+    opacity: 0;
+    transform: translateX(0);
   }
-
 }
