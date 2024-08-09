@@ -57,16 +57,21 @@
   width: 100%;
   height: 100%;
   display: block;
-  animation: slideIn 1s forwards ease-in-out;
+  animation: slideInFadeOut 2s forwards ease-in-out;
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-100px);
+@keyframes slideInFadeOut {
+  0% {
+    opacity: 0; /* Start fully transparent */
+    transform: translateX(-100px); /* Start 100 pixels to the left */
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  50% {
+    opacity: 1; /* Fully visible at the middle point */
+    transform: translateX(50%); /* Slide to the middle */
   }
+  100% {
+    opacity: 0; /* Fade out by the end */
+    transform: translateX(0); /* End at the original position */
+  }
+
 }
