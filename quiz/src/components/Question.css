@@ -9,7 +9,6 @@
   padding: 20px;
   border-radius: 10px;
   border: 2px solid white;
-  font-size: 20px;
 }
 .answer-buttons {
   display: flex;
@@ -52,7 +51,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .result-image {
@@ -60,11 +58,6 @@
   height: 100%;
   display: block;
   animation: slideIn 1s forwards ease-in-out;
-}
-
-.result-image.correct,
-.result-image.incorrect {
-  opacity: 1;
 }
 
 @keyframes slideIn {
