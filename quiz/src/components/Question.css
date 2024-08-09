@@ -4,7 +4,7 @@
   color: var(--text-color);
   font-size: var(--font-size-text);
   margin-bottom: 60px;
-  background: linear-gradient(to right, black, green);
+  background: linear-gradient (to right, black, green);
   text-align: center;
   padding: 20px;
   border-radius: 10px;
@@ -13,9 +13,7 @@
 }
 .answer-buttons {
   display: flex;
-
   width: 100%;
-
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -25,7 +23,6 @@
   padding: 15px;
   margin: 0 10px 20px 10px;
   text-align: center;
-
   border: 1px solid var(--container-border-color);
   background-color: var(--background-color);
   color: white;
@@ -46,4 +43,37 @@
 
 .answer-buttons button.incorrect {
   border: 1px solid crimson;
+}
+
+.result-image-container {
+  width: 250px;
+  height: 150px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.result-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: slideIn 1s forwards ease-in-out;
+}
+
+.result-image.correct,
+.result-image.incorrect {
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

@@ -9,7 +9,7 @@ const Timer = ({ timeLeft }) => {
       <div
         className="timer-mask"
         style={{
-          WebkitMaskImage: `linear-gradient(to top, transparent ${percentage}%, rgba(0, 0, 0, 0.3) ${percentage}%)`,
+          WebkitMaskImage: `linear-gradient(to bottom, transparent ${percentage}%, rgba(0, 0, 0, 0.3) ${percentage}%)`,
         }}
       />
       <div className="timer-text">{timeLeft}</div>

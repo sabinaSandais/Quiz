@@ -93,27 +93,6 @@ const Quiz = () => {
           selectedAnswer={selectedAnswer}
         />
         <Score score={score} />
-        <div className="result-image-container">
-          {selectedAnswer && (
-            <img
-              src={
-                selectedAnswer === currentQ.correct_answer
-                  ? "/correct2.png"
-                  : "/wronganswer.png"
-              }
-              alt={
-                selectedAnswer === currentQ.correct_answer
-                  ? "Correct"
-                  : "Incorrect"
-              }
-              className={`result-image ${
-                selectedAnswer === currentQ.correct_answer
-                  ? "correct"
-                  : "incorrect"
-              }`}
-            />
-          )}
-        </div>
       </section>
       <section className="two">
         <Timer timeLeft={timeLeft} />

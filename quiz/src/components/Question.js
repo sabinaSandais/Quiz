@@ -28,6 +28,27 @@ const Question = ({ question, handleAnswer, selectedAnswer }) => {
             {parse(answer)}
           </button>
         ))}
+        <div className="result-image-container">
+          {selectedAnswer && (
+            <img
+              src={
+                selectedAnswer === question.correct_answer
+                  ? "/correct2.png"
+                  : "/wronganswer.png"
+              }
+              alt={
+                selectedAnswer === question.correct_answer
+                  ? "Correct"
+                  : "Incorrect"
+              }
+              className={`result-image ${
+                selectedAnswer === question.correct_answer
+                  ? "correct"
+                  : "incorrect"
+              }`}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

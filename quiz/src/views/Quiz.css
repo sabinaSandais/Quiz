@@ -37,36 +37,3 @@ h2 {
   text-align: center;
   width: 50%;
 }
-
-.result-image-container {
-  width: 250px;
-  height: 150px;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.result-image {
-  width: 100%;
-  height: 100%;
-  display: block;
-  animation: slideIn 1s forwards ease-in-out;
-}
-
-.result-image.correct,
-.result-image.incorrect {
-  opacity: 1;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
