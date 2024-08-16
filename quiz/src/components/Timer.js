@@ -2,7 +2,7 @@ import React from "react";
 import "./Timer.css";
 
 const Timer = ({ timeLeft }) => {
-  const percentage = (timeLeft / 10) * 100;
+  const percentage = (timeLeft / 20) * 100;
 
   return (
     <div className="timer-circle">
