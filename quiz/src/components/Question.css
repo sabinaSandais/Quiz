@@ -4,7 +4,7 @@
   color: var(--text-color);
   font-size: var(--font-size-text);
   margin-bottom: 60px;
-
+  background: linear-gradient (to right, black, green);
   text-align: center;
   padding: 20px;
   border-radius: 10px;
