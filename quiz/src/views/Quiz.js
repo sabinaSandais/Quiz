@@ -44,7 +44,7 @@ const Quiz = () => {
               (answer === questions[currentQuestion].correct_answer ? 1 : 0)
           );
         }
-      }, 2000);
+      }, 3000);
     },
     [selectedAnswer, score, questions, currentQuestion, setFinalScore]
   );
@@ -62,7 +62,7 @@ const Quiz = () => {
       );
     }
   }, [currentQuestion, questions, score, selectedAnswer, setFinalScore]);
-
+//Timer
   useEffect(() => {
     if (timeLeft <= 0) {
       handleTimeOut();
