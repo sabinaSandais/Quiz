@@ -4,12 +4,11 @@
   color: var(--text-color);
   font-size: var(--font-size-text);
   margin-bottom: 60px;
-  background: linear-gradient (to right, black, green);
+  background: linear-gradient(to right, black, green);
   text-align: center;
   padding: 20px;
   border-radius: 10px;
   border: 2px solid white;
-  font-size: 20px;
 }
 .answer-buttons {
   display: flex;
@@ -52,28 +51,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .result-image {
   width: 100%;
   height: 100%;
   display: block;
-  animation: slideIn 1s forwards ease-in-out;
+  animation: slideInFadeOut 2s forwards ease-in-out;
 }
 
-.result-image.correct,
-.result-image.incorrect {
-  opacity: 1;
-}
-
-@keyframes slideIn {
-  from {
+@keyframes slideInFadeOut {
+  0% {
     opacity: 0;
     transform: translateX(-100px);
   }
-  to {
+  50% {
     opacity: 1;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 0;
     transform: translateX(0);
   }
 }

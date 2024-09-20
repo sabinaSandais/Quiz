@@ -18,7 +18,7 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(20);
   const timerRef = useRef(null);
 
   const handleAnswer = useCallback(
@@ -37,14 +37,14 @@ const Quiz = () => {
         if (currentQuestion < questions.length - 1) {
           setCurrentQuestion(currentQuestion + 1);
           setSelectedAnswer("");
-          setTimeLeft(10);
+          setTimeLeft(20);
         } else {
           setFinalScore(
             score +
               (answer === questions[currentQuestion].correct_answer ? 1 : 0)
           );
         }
-      }, 2000);
+      }, 3000);
     },
     [selectedAnswer, score, questions, currentQuestion, setFinalScore]
   );
@@ -54,7 +54,7 @@ const Quiz = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer("");
-      setTimeLeft(10);
+      setTimeLeft(20);
     } else {
       setFinalScore(
         score +
@@ -62,7 +62,7 @@ const Quiz = () => {
       );
     }
   }, [currentQuestion, questions, score, selectedAnswer, setFinalScore]);
-
+  //Timer
   useEffect(() => {
     if (timeLeft <= 0) {
       handleTimeOut();
